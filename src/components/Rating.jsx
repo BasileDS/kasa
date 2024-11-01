@@ -7,12 +7,11 @@ export function Rating ({rating}) {
     const ratingNumber = Number(rating)
     const stars = [1, 2, 3, 4, 5]
     
-    stars.forEach( (e) => {
-        e > ratingNumber ? <img src={starActive} alt="active start" /> : <img src={starInactive} alt="disabled start"  />;
-    })
-
-    return stars.map( (e, i) => e <= ratingNumber ? 
-            <img src={starActive} alt="active start" key={`${e}-${i}`}/>
-            : <img src={starInactive} alt="disabled start" key={`${e}-${i}`} />
+    return stars.map((e, i) =>
+        e <= ratingNumber ? (
+          <img src={starActive} alt="active start" key={`${e}-${i}`} />
+        ) : (
+          <img src={starInactive} alt="disabled start" key={`${e}-${i}`} />
         )
+      )
 }
